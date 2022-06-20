@@ -1,4 +1,9 @@
 // array con all'interno le immagini 
+// creo un ciclo per selezionare le immagini partendo da 0
+// creo l'elemento img
+// aggiungo la classe d-none per non farle vedere 
+// cambio l'attributo dell'immagine
+// rimuovo il d-none alla prima immagine per farla vedere
 const images = [
     'https://cdn.photographycourse.net/wp-content/uploads/2022/04/Portrait-vs-Landscape-Featured-Image-3.jpg',
     'https://i.natgeofe.com/n/2a832501-483e-422f-985c-0e93757b7d84/6.jpg',
@@ -8,8 +13,9 @@ const images = [
     'https://mymodernmet.com/wp/wp-content/uploads/2020/02/Landscape-Photographer-of-the-Year-Sander-Grefte.jpg'
     ];
 
-const imgsClass = document.querySelector('.carousel-image');
 let activeImg = 0;
+const imgsClass = document.querySelector('.carousel-image');
+const imgList = imgsClass.children;
 
 for(let i =0; i < images.length; i++) {
 
@@ -19,4 +25,6 @@ newImg.setAttribute('src', images[i]);
 imgsClass.append(newImg);
 
 }
+imgList[activeImg].classList.remove('d-none');
+
 
