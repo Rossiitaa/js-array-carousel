@@ -26,5 +26,37 @@ imgsClass.append(newImg);
 
 }
 imgList[activeImg].classList.remove('d-none');
+imgList[activeImg].classList.add('active');
+
+// prendiamo i bottoni
+// quando il bottone viene cliccato parte la funzione assegnata
+    // bottone next: immagine scorre avanti
+    // bottone prev: immagine scorre indietro
+// al click rimuoviamo l'active all'immagine attuale, gli assegniamo il d-none
+// all'immagine nuova il contrario, si rimuove il d-none e si assegna l'active
+
+const buttonNext = document.querySelector('#next-btn');
+buttonNext.addEventListener('click', function() {
+
+imgList[activeImg].classList.remove('active');
+imgList[activeImg].classList.add('d-none');
+
+activeImg++;
+imgList[activeImg].classList.remove('d-none');
+imgList[activeImg].classList.add('active');
+
+
+});
+
+const buttonPrevious = document.querySelector('#previous-btn');
+buttonPrevious.addEventListener('click', function() {
+
+imgList[activeImg].classList.remove('active');
+imgList[activeImg].classList.add('d-none');
+    
+activeImg--;
+imgList[activeImg].classList.remove('d-none');
+imgList[activeImg].classList.add('active');
+});
 
 
