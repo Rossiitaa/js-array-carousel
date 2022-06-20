@@ -34,6 +34,7 @@ imgList[activeImg].classList.add('active');
     // bottone prev: immagine scorre indietro
 // al click rimuoviamo l'active all'immagine attuale, gli assegniamo il d-none
 // all'immagine nuova il contrario, si rimuove il d-none e si assegna l'active
+//* bonus1: aggiunger ciclo infinito
 
 const buttonNext = document.querySelector('#next-btn');
 buttonNext.addEventListener('click', function() {
@@ -42,6 +43,9 @@ imgList[activeImg].classList.remove('active');
 imgList[activeImg].classList.add('d-none');
 
 activeImg++;
+if (activeImg === imgList.length){
+    activeImg = 0;
+} 
 imgList[activeImg].classList.remove('d-none');
 imgList[activeImg].classList.add('active');
 
@@ -55,6 +59,9 @@ imgList[activeImg].classList.remove('active');
 imgList[activeImg].classList.add('d-none');
     
 activeImg--;
+if (activeImg === -1){
+    activeImg = imgList.length-1;
+} 
 imgList[activeImg].classList.remove('d-none');
 imgList[activeImg].classList.add('active');
 });

@@ -12,3 +12,9 @@ img {
 .carousel-container {
     margin: 0 auto;
 }
+
+.arrow {
+    cursor: pointer;
+    position: relative;
+    bottom: 450px;
+}
